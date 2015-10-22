@@ -1,0 +1,82 @@
+Presentación BNF de la gramática para la lógica de
+predicados de 1er orden
+•
+
+<exp_log> ::= (~ <exp_log> | ‘(‘ <exp_log> ‘)’ |
+<exp_log> <opr_log_bin> <exp_log> |
+<cuantificación> <exp_log> | <átomo>)
+
+•
+
+<opr_log_bin> ::= ( & | ’|’ | -> | <- | <-> )
+
+•
+
+<cuantificación> ::= <cuantificador> <var>
+
+•
+
+<cuantificador> ::= ( @ | # )
+
+•
+
+<var> ::= <letra_may> [ <lista_car_válido> ]
+
+•
+
+<átomo> ::= ( <const_pred> ’(‘<lista_términos>’)’ | <comparación> )
+
+•
+
+<const_pred> ::= <letra_min> [ <lista_car_válido> ]
+
+•
+
+<comparación> ::= <término> <opr_comp> <término>
+
+•
+
+<opr_comp> ::= ( = | != | ‘<’ | ‘>’ | <= | >= )
+
+•
+
+<lista_términos> ::= ( <término> | <término>,<lista_términos> )
+
+•
+
+<término> ::= ( <función> | <var> | <const_objeto> )
+
+•
+
+<const_objeto> ::= <letra_min> [ <lista_car_válido> ]
+
+•
+
+<función> ::= <const_función> ’(‘ <lista_términos> ’)’
+
+•
+
+<const_función> ::= <letra_min> [ <lista_car_válido> ]
+
+•
+
+<letra_may> ::= ( A | B | C | D | E | F | G | H | I | ... | Y | Z )
+
+•
+
+<letra_min> ::= ( a | b | c | d | f | g | h | I | ... | y | z )
+
+•
+
+<lista_car_válido> ::= ( <car_válido> | <car_válido> <lista_car_válido> )
+
+•
+
+<car_válido> ::= ( <letra_may> | <letra_min> | <dígito> | _ )
+
+•
+
+<dígito> ::= ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 )
+
+Luis Alberto Casillas Santillán, Oct 2008
+
